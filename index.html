@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartMeds | Medicine Reminder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>💊 SmartMeds</h2>
+    <p class="nav active">Dashboard</p>
+    <p class="nav">Medicine Schedule</p>
+    <p class="nav">Stock & Refills</p>
+    <p class="nav">Medicine History</p>
+    <div class="side-note">Your health, our priority.</div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <div>
+        <p class="eyebrow">HEALTH MANAGEMENT</p>
+        <h1>Medicine Dashboard</h1>
+        <p class="muted">Manage your medicines and daily reminders.</p>
+      </div>
+      <button id="addBtn">+ Add Medicine</button>
+    </header>
+
+    <section class="stats">
+      <article class="stat">
+        <span>Total Medicines</span>
+        <h2 id="total">0</h2>
+      </article>
+      <article class="stat">
+        <span>Pending Today</span>
+        <h2 id="pending">0</h2>
+      </article>
+      <article class="stat">
+        <span>Low Stock</span>
+        <h2 id="low">0</h2>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>My Medicines</h2>
+          <p class="muted">Your saved medicine schedule</p>
+        </div>
+        <span class="pill">Daily tracker</span>
+      </div>
+
+      <form id="medicineForm" class="medicine-form" hidden>
+        <h3 id="formTitle">Add a medicine</h3>
+        <label>Medicine name
+          <input id="name" required placeholder="e.g. Vitamin tablet">
+        </label>
+        <label>Dosage
+          <input id="dosage" required placeholder="e.g. 1 tablet">
+        </label>
+        <div class="form-row">
+          <label>Quantity remaining
+            <input id="quantity" type="number" min="0" value="30" required>
+          </label>
+          <label>Reminder time
+            <input id="time" type="time" required>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="cancelBtn" class="secondary">Cancel</button>
+          <button type="submit">Save Medicine</button>
+        </div>
+      </form>
+
+      <div id="medicineList"></div>
+    </section>
+
+    <p class="footer">SmartMeds · Smart reminders for healthier living</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
